@@ -5,10 +5,13 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@material-ui/core": "^4.9.12",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.9.10",
     "@tensorflow-models/coco-ssd": "0.1.1",
     "@tensorflow/tfjs": "0.14.0",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-magic-dropzone": "1.0.1",
     "react-scripts": "2.0.3"
   },

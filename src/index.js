@@ -5,6 +5,13 @@ import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
 import "./styles.css";
 
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@material-ui/core/Container";
+import ButtonAppBar from "./components/ButtonAppBar";
+import Footer from "./components/Footer";
+import Title from "./components/Title";
+import Controller from "./components/Controller/Controller";
+
 class App extends React.Component {
   videoRef = React.createRef();
   canvasRef = React.createRef();
@@ -15,10 +22,10 @@ class App extends React.Component {
         .getUserMedia({
           audio: false,
           video: {
-            facingMode: "user"
-          }
+            facingMode: "user",
+          },
         })
-        .then(stream => {
+        .then((stream) => {
           window.stream = stream;
           this.videoRef.current.srcObject = stream;
           return new Promise((resolve, reject) => {
@@ -29,17 +36,17 @@ class App extends React.Component {
         });
       const modelPromise = cocoSsd.load();
       Promise.all([modelPromise, webCamPromise])
-        .then(values => {
+        .then((values) => {
           this.detectFrame(this.videoRef.current, values[0]);
         })
-        .catch(error => {
+        .catch((error) => {
           console.error(error);
         });
     }
   }
 
   detectFrame = (video, model) => {
-    model.detect(video).then(predictions => {
+    model.detect(video).then((predictions) => {
       this.renderPredictions(predictions);
       requestAnimationFrame(() => {
         this.detectFrame(video, model);
@@ -47,14 +54,14 @@ class App extends React.Component {
     });
   };
 
-  renderPredictions = predictions => {
+  renderPredictions = (predictions) => {
     const ctx = this.canvasRef.current.getContext("2d");
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     // Font options.
     const font = "16px sans-serif";
     ctx.font = font;
     ctx.textBaseline = "top";
-    predictions.forEach(prediction => {
+    predictions.forEach((prediction) => {
       const x = prediction.bbox[0];
       const y = prediction.bbox[1];
       const width = prediction.bbox[2];
@@ -70,7 +77,7 @@ class App extends React.Component {
       ctx.fillRect(x, y, textWidth + 4, textHeight + 4);
     });
 
-    predictions.forEach(prediction => {
+    predictions.forEach((prediction) => {
       const x = prediction.bbox[0];
       const y = prediction.bbox[1];
       // Draw the text last to ensure it's on top.
@@ -82,21 +89,30 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <video
-          className="size"
-          autoPlay
-          playsInline
-          muted
-          ref={this.videoRef}
-          width="600"
-          height="500"
-        />
-        <canvas
-          className="size"
-          ref={this.canvasRef}
-          width="600"
-          height="500"
-        />
+        <React.Fragment>
+          <CssBaseline />
+          <Container fixed>
+            <ButtonAppBar />
+            <Title />
+            <Controller />
+            <video
+              className="size"
+              autoPlay
+              playsInline
+              muted
+              ref={this.videoRef}
+              width="600"
+              height="500"
+            />
+            <canvas
+              className="size"
+              ref={this.canvasRef}
+              width="600"
+              height="500"
+            />
+            <Footer />
+          </Container>
+        </React.Fragment>
       </div>
     );
   }

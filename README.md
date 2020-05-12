@@ -19,7 +19,7 @@
 ## ARMI DEMO ✏️🔤
 
 
-![IMAGE MAIN 1](/images/armi-demo.PNG)
+![IMAGE MAIN 1](/images/armi-demo.png)
 
 * Anatomía de una URL
 

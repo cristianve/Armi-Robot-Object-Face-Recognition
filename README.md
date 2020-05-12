@@ -16,18 +16,8 @@
   * 3.3. Estado del brazo Cargando/Reposo
   * 3.4. Objeto detectado
 
-## ARMI DEMO ✏️🔤
+## ARMI DEMO 📷📦
 
 
 ![IMAGE MAIN 1](/images/armi-demo.png)
-
-* Anatomía de una URL
-
-* Nombre de los recursos
-
-* Path parameters
-
-* Query parameters
-
-* Campos de entrada/salida
 

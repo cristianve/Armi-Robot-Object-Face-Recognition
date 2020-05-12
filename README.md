@@ -1,4 +1,4 @@
-# Armi-Robot-Object-Face-Recognition 🦾📦📷
+# Armi-Robot-Object-Recognition 🦾📦📷
 # UAB - Robotics 🎓🤖
 
 ## Funcionalidad de la Api 📇

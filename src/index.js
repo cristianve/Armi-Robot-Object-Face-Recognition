@@ -7,6 +7,7 @@ import "./styles.css";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 import ButtonAppBar from "./components/ButtonAppBar";
 import Footer from "./components/Footer";
 import Title from "./components/Title";
@@ -95,7 +96,9 @@ class App extends React.Component {
             <ButtonAppBar />
             <Title />
             <Controller />
-            <video
+            <Grid container alignItems="center">
+              <div style={{position: "relative",marginLeft: "300px" }}>
+              <video
               className="size"
               autoPlay
               playsInline
@@ -110,7 +113,13 @@ class App extends React.Component {
               width="600"
               height="500"
             />
+              </div>
+           
+            </Grid>
+            <Grid style={{marginTop:520}}>
             <Footer />
+            </Grid>
+         
           </Container>
         </React.Fragment>
       </div>

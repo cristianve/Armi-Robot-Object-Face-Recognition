@@ -11,7 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
+import BuildIcon from '@material-ui/icons/Build';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,6 +40,8 @@ export default function BasicButtonGroup() {
 
   return (
     <div className={classes.root}>
+
+      <BuildIcon/>
       <Typography gutterBottom variant="h5" component="h2">
         <Box fontWeight="fontWeightBold">Action Menu:</Box>
       </Typography>

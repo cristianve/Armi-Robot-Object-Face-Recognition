@@ -9,6 +9,7 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Checkbox from '@material-ui/core/Checkbox';
 
+import InsertChartIcon from '@material-ui/icons/InsertChart';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,6 +35,9 @@ export default function BasicButtonGroup() {
 
   return (
     <div className={classes.root}>
+
+
+     <InsertChartIcon/>
       <Typography gutterBottom variant="h5" component="h2" >
         <Box fontWeight="fontWeightBold" component="span">Real-Time Info/Data:</Box>
       </Typography>
